@@ -9,36 +9,36 @@ class Bicikl:
         return self.__repr__()
 
 class Cestovni(Bicikl):
-    def __init__(self, namjena, način_pogona, broj_linija, broj_stanica):
+    def __init__(self, namjena, način_pogona, boja, broj_brzina):
         
         super().__init__(namjena, način_pogona)
-        self.l=broj_linija
-        self.s=broj_stanica
+        self.b=boja
+        self.br=broj_brzina
     def __repr__(self):
-        return f'Gradski bus namjena: {self.n} kapacitet: {self.k} broj_linija:{self.l} broj_stanica:{self.s}'
+        return f'Cestovni bicikl namjena: {self.n} način_pogona: {self.p} boja:{self.b} broj_brzina:{self.br}'
     def __str__(self):
         return self.__repr__()
 
 
-class Turistički(Bus):
-    def __init__(self, namjena, način_pogona, vrsta_krova, wc):
+class BMX(Bicikl):
+    def __init__(self, namjena, način_pogona, brzina, tip):
        
         super().__init__(namjena, način_pogona)
-        self.krov=vrsta_krova
-        self.w=wc
+        self.brz=brzina
+        self.tip=tip
     def __repr__(self):
-        return f'Turistički bus namjena: {self.n} kapacitet: {self.k} vrsta_krova:{self.krov} wc:{self.w}'
+       return f'BMX bicikl namjena: {self.n} način_pogona: {self.p} brzina:{self.brz} tip:{self.tip}'
     def __str__(self):
         return self.__repr__()
 
 
-class Školski(Bus):
-    def __init__(self, namjena, način_pogona, težina, boja):
+class Dječji(Bus):
+    def __init__(self, namjena, način_pogona, broj_kotača, visina):
  
         super().__init__(namjena, način_pogona)
-        self.t=težina
-        self.boja=boja
+        self.k=broj_kotača
+        self.v=visina
     def __repr__(self):
-       return f'Skuter brzina: {self.b} cijena: {self.c} težina:{self.t} boja:{self.boja}'
+       return f'Dječji bicikl namjena: {self.n} način_pogona: {self.p} broj_kotača:{self.k} visina:{self.v}'
     def __str__(self):
         return self.__repr__()
