@@ -1,17 +1,17 @@
 class Bicikl:
-    def __init__(self, namjena, kapacitet):
+    def __init__(self, namjena, način_pogona):
         
         self.n=namjena
-        self.k=kapacitet
+        self.p=način_pogona
     def __repr__(self):
-        return 'namjena (kapacitet):'+self.n+'( '+self.k + ')'
+        return 'namjena (način_pogona):'+self.n+'( '+self.p + ')'
     def __str__(self):
         return self.__repr__()
 
-class Gradski(Bus):
-    def __init__(self, namjena, kapacitet, broj_linija, broj_stanica):
+class Cestovni(Bicikl):
+    def __init__(self, namjena, način_pogona, broj_linija, broj_stanica):
         
-        super().__init__(namjena, kapacitet)
+        super().__init__(namjena, način_pogona)
         self.l=broj_linija
         self.s=broj_stanica
     def __repr__(self):
@@ -21,9 +21,9 @@ class Gradski(Bus):
 
 
 class Turistički(Bus):
-    def __init__(self, namjena, kapacitet, vrsta_krova, wc):
+    def __init__(self, namjena, način_pogona, vrsta_krova, wc):
        
-        super().__init__(namjena, kapacitet)
+        super().__init__(namjena, način_pogona)
         self.krov=vrsta_krova
         self.w=wc
     def __repr__(self):
@@ -33,9 +33,9 @@ class Turistički(Bus):
 
 
 class Školski(Bus):
-    def __init__(self, namjena, kapacitet, težina, boja):
+    def __init__(self, namjena, način_pogona, težina, boja):
  
-        super().__init__(namjena, kapacitet)
+        super().__init__(namjena, način_pogona)
         self.t=težina
         self.boja=boja
     def __repr__(self):
