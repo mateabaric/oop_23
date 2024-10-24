@@ -1,44 +1,44 @@
 class Kamion:
-    def __init__(self, težina, namjena):
+    def __init__(self, dužina, namjena):
         
-        self.t=težina
+        self.d=dužina
         self.n=namjena
     def __repr__(self):
-        return 'težina (namjena):'+self.t+'( '+self.n + ')'
+        return 'dužina (namjena):'+self.t+'( '+self.n + ')'
     def __str__(self):
         return self.__repr__()
 
-class Poljoprivredni(Traktor):
-    def __init__(self,  težina, namjena, model, snaga):
+class Šleper(Kamion):
+    def __init__(self,  dužina, namjena, vrsta_robe, prikolica):
         
         super().__init__(težina, namjena)
-        self.m=model
-        self.s=snaga
+        self.r=vrsta_robe
+        self.p=prikolica
     def __repr__(self):
-        return f'Poljoprivredni traktor težina: {self.t} namjena: {self.n} model:{self.m} snaga:{self.s}'
+        return f'Šleper dužina: {self.d} namjena: {self.n} vrsta_robe:{self.r} prikolica:{self.p}'
     def __str__(self):
         return self.__repr__()
 
 
-class Vinogradarski(Traktor):
-    def __init__(self, težina, namjena, cijena, spremnik):
+class Autotransporter(Kamion):
+    def __init__(self, težina, namjena, broj_katova, platforma):
        
         super().__init__(težina, namjena)
-        self.c=cijena
-        self.spr=spremnik
+        self.k=broj_katova
+        self.plat=platforma
     def __repr__(self):
-        return f'Vinogradarski traktor težina: {self.t} namjena: {self.n} cijena:{self.c} spremnik:{self.spr}'
+        return f'Autotransporter dužina: {self.d} namjena: {self.n} broj_katova:{self.k} platforma:{self.plat}'
     def __str__(self):
         return self.__repr__()
 
 
-class Vučni(Traktor):
-    def __init__(self, broj_kotača, namjena, tip, brzina):
+class Cisterna(Kamion):
+    def __init__(self, broj_kotača, namjena, tekućina, kapacitet):
  
         super().__init__(težina, namjena)
-        self.tip=tip
-        self.brz=brzina
+        self.tek=tekućina
+        self.kap=kapacitet
     def __repr__(self):
-        return f'Vučni traktor težina: {self.t} namjena: {self.n} tip:{self.tip} brzina:{self.brz}'
+        return f'Cisterna dužina: {self.d} namjena: {self.n} tekućina:{self.tek} kapacitet:{self.kap}'
     def __str__(self):
         return self.__repr__()
