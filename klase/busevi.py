@@ -33,12 +33,12 @@ class Turistički(Bus):
 
 
 class Školski(Bus):
-    def __init__(self, namjena, kapacitet, težina, boja):
+    def __init__(self, namjena, kapacitet, broj_stanica, boja):
  
         super().__init__(namjena, kapacitet)
-        self.t=težina
+        self.s=broj_stanica
         self.boja=boja
     def __repr__(self):
-       return f'Skuter brzina: {self.b} cijena: {self.c} težina:{self.t} boja:{self.boja}'
+        return f'Školski bus namjena: {self.n} kapacitet: {self.k} broj_stanica:{self.s} boja:{self.boja}'
     def __str__(self):
         return self.__repr__()
