@@ -4,7 +4,7 @@ class Kamion:
         self.d=dužina
         self.n=namjena
     def __repr__(self):
-        return 'dužina (namjena):'+self.t+'( '+self.n + ')'
+        return 'dužina (namjena):'+self.d+'( '+self.n + ')'
     def __str__(self):
         return self.__repr__()
 
