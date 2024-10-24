@@ -20,9 +20,9 @@ def trazi_auto(e,izbor):
     broj_kotača=int(e.get())
     
     L_Limuzina=[
-        SUV(4,'vjenčanja', '7 m', 'bijela'),
-        SUV(4,'parti', '8 m', 'crna'),
-        SUV(4,'luksuzna', '10 m', 'crvena')]
+        Limuzina(4,'vjenčanja', '7 m', 'bijela'),
+        Limuzina(4,'parti', '8 m', 'crna'),
+        Limuzina(4,'luksuzna', '10 m', 'crvena')]
      broj_kotača=int(e.get())
    
     novi=Toplevel(p)
@@ -96,22 +96,22 @@ def test_Limuzina():
 
 
 def trazi_bicikl(e,izbor):
-    L_pickup=[
-        Pickup(4,'prijevoz tereta',2,'3000 kg'),
-        Pickup(4,'obiteljski prijevoz',2,'1000 kg'),
-        Pickup(4,'kampiranje',2,'2000 kg')]
+    L_Cestovni=[
+        Cestovni('gradska vožnja','ljudska energija','žuta',3),
+        Cestovni('seoska vožnja','ljudska energija','crvena',5),
+        Cestovni('gradska vožnja','ljudska energija','plava',6)]
     broj_vrata=int(e.get())
     
-    L_SUV=[
-        SUV(4,'obiteljska', '30 000 USD', '170 cm'),
-        SUV(4,'terenska', '40 000 USD', '185 cm'),
-        SUV(4,'vlačenje prikolica', '55 000 USD', '190 cm')]
+    L_BMX=[
+        BMX('terenska','ljudska energija', '40 km/h', 'natjecateljski'),
+        BMX('rekreacijska','ljudska energija', '25 km/h', 'freestyle'),
+        BMX('terenska','ljudska energija', '35 km/h', 'freestyle')]
     broj_kotača=int(e.get())
     
-    L_Limuzina=[
-        SUV(4,'vjenčanja', '7 m', 'bijela'),
-        SUV(4,'parti', '8 m', 'crna'),
-        SUV(4,'luksuzna', '10 m', 'crvena')]
+    L_Dječji=[
+        Dječji('obrazovna','električni', 4, '20 cm'),
+        Dječji('rekreacijska','ljudska energija', 6, '30 cm'),
+        Dječji('natjecateljska','ljudska energija', 2, '45 cm')]
      broj_kotača=int(e.get())
    
     novi=Toplevel(p)
