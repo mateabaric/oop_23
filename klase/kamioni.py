@@ -11,7 +11,7 @@ class Kamion:
 class Šleper(Kamion):
     def __init__(self,  dužina, namjena, vrsta_robe, prikolica):
         
-        super().__init__(težina, namjena)
+        super().__init__(dužina, namjena)
         self.r=vrsta_robe
         self.p=prikolica
     def __repr__(self):
@@ -21,9 +21,9 @@ class Šleper(Kamion):
 
 
 class Autotransporter(Kamion):
-    def __init__(self, težina, namjena, broj_katova, platforma):
+    def __init__(self, dužina, namjena, broj_katova, platforma):
        
-        super().__init__(težina, namjena)
+        super().__init__(dužina, namjena)
         self.k=broj_katova
         self.plat=platforma
     def __repr__(self):
@@ -33,9 +33,9 @@ class Autotransporter(Kamion):
 
 
 class Cisterna(Kamion):
-    def __init__(self, broj_kotača, namjena, tekućina, kapacitet):
+    def __init__(self, dužina, namjena, tekućina, kapacitet):
  
-        super().__init__(težina, namjena)
+        super().__init__(dužina, namjena)
         self.tek=tekućina
         self.kap=kapacitet
     def __repr__(self):
