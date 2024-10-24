@@ -1,4 +1,4 @@
-class Traktor:
+class Kamion:
     def __init__(self, težina, namjena):
         
         self.t=težina
