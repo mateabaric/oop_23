@@ -33,7 +33,7 @@ class Vinogradarski(Traktor):
 
 
 class Vučni(Traktor):
-    def __init__(self, broj_kotača, namjena, tip, brzina):
+    def __init__(self, težina, namjena, tip, brzina):
  
         super().__init__(težina, namjena)
         self.tip=tip
