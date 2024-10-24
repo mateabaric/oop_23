@@ -8,10 +8,10 @@ class Motocikl:
     def __str__(self):
         return self.__repr__()
 
-class Šleper(Kamion):
-    def __init__(self,  dužina, namjena, vrsta_robe, prikolica):
+class Sportski(Motocikl):
+    def __init__(self, brzina, cijena, snaga_motora, marka):
         
-        super().__init__(težina, namjena)
+        super().__init__(brzina, cijena)
         self.r=vrsta_robe
         self.p=prikolica
     def __repr__(self):
