@@ -22,11 +22,11 @@ def trazi_busevi(e,izbor):
     if izbor.get()==1:
         for i in range(len(L_gradski)):
             if L_gradski[i].k>=kapacitet:
-                Label(novi,text=L_razgl[i]).pack()
+                Label(novi,text=L_gradski[i]).pack()
     else:
         for i in range(len(L_turist)):
             if L_turist[i].k>=kapacitet:
-                Label(novi,text=L_izl[i]).pack()
+                Label(novi,text=L_turist[i]).pack()
     novi.mainloop()
 
 def test_busevi():
@@ -90,7 +90,11 @@ def trazi_motocikli(e,izbor):
         Cruiser('160 km/h','17 000 eura','65 cm','1984. godina'),
         Cruiser('140 km/h','9 500 eura','69 cm','2005. godina'),
         Cruiser('190 km/h','14 000 eura','64 cm','1920. godina')]
-    brzina=str(e.get())
+    brzina=e.get().strip()
+
+    if not brzina:
+        showerror("Greška", "Unesite brzinu!")
+        return
 
     novi=Toplevel(p)
     Label(novi,text='Rezultati pretraživanja:').pack()
@@ -130,5 +134,5 @@ if __name__=='__main__':
     podmeni.add_command(label="Izlaz", underline= 1, command= exit, accelerator= "Ctrl+Q")
     menibar.add_cascade(label='Izbornik', menu=podmeni)
     p.config(menu=menibar)
-    test_aktivnosti()
+    test_busevi()
     p.mainloop()
