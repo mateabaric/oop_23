@@ -31,14 +31,3 @@ class Cruiser(Motocikl):
     def __str__(self):
         return self.__repr__()
 
-
-class Skuter(Motocikl):
-    def __init__(self, brzina, cijena, težina, boja):
- 
-        super().__init__(brzina, cijena)
-        self.t=težina
-        self.boja=boja
-    def __repr__(self):
-       return f'Skuter brzina: {self.b} cijena: {self.c} težina:{self.t} boja:{self.boja}'
-    def __str__(self):
-        return self.__repr__()
