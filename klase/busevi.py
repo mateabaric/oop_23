@@ -15,7 +15,7 @@ class Gradski(Bus):
         self.l=broj_linija
         self.s=broj_stanica
     def __repr__(self):
-        return f'Gradski bus namjena: {self.n} kapacitet: {self.k} broj_linija:{self.l} broj_stanica:{self.s}'
+        return f'Namjena gradskog busa: {self.n}, njegov kapacitet: {self.k}, broj linija koje voze:{self.l}, broj stanica na kojima staje:{self.s}'
     def __str__(self):
         return self.__repr__()
 
@@ -27,6 +27,6 @@ class Turistički(Bus):
         self.krov=vrsta_krova
         self.w=wc
     def __repr__(self):
-        return f'Turistički bus namjena: {self.n} kapacitet: {self.k} vrsta_krova:{self.krov} wc:{self.w}'
+        return f'Namjena turističkog busa: {self.n}, njegov kapacitet: {self.k}, vrsta krova:{self.krov}, ima li wc:{self.w}'
     def __str__(self):
         return self.__repr__()
