@@ -6,184 +6,44 @@ from klase.motocikli import *
 from klase.traktori import *
 from tkinter import *
 
-def trazi_auto(e,izbor):
-    L_pickup=[
-        Pickup(4,'prijevoz tereta',2,'3000 kg'),
-        Pickup(4,'obiteljski prijevoz',2,'1000 kg'),
-        Pickup(4,'kampiranje',2,'2000 kg')]
-    broj_vrata=int(e.get())
-    
-    L_SUV=[
-        SUV(4,'obiteljska', '30 000 USD', '170 cm'),
-        SUV(4,'terenska', '40 000 USD', '185 cm'),
-        SUV(4,'vlačenje prikolica', '55 000 USD', '190 cm')]
-    broj_kotača=int(e.get())
-    
-    L_Limuzina=[
-        Limuzina(4,'vjenčanja', '7 m', 'bijela'),
-        Limuzina(4,'parti', '8 m', 'crna'),
-        Limuzina(4,'luksuzna', '10 m', 'crvena')]
-     broj_kotača=int(e.get())
-   
-    novi=Toplevel(p)
-    Label(novi,text='Rezultati pretraživanja:').pack()
-    if izbor.get()==1:
-        for i in range(len(L_Pickup)):
-            if L_Pickup[i].k>=broj_kotača:
-                Label(novi,text=L_Pickup[i]).pack()
-    else:
-        for i in range(len(L_SUV)):
-            if L_SUV[i].k>=broj_kotača:
-                Label(novi,text=L_SUV[i]).pack()
-    else:
-        for i in range(len(L_Limuzina)):
-            if L_Limuzina[i].k>=broj_kotača:
-                Label(novi,text=L_Limuzina[i]).pack()
-    novi.mainloop()
-
-def test_Auto():
-    l=Label(p,text='Unesi podatke o autu')
-    l.grid(row=0,column=0)
-    l=Label(p,text='Vrsta auta:')
-    l.grid(row=1,column=0)
-    izbor=IntVar()
-    Radiobutton(p,variable=izbor,text='Pickup',value=1).grid(row=1,column=1)
-    Radiobutton(p,variable=izbor,text='SUV',value=2).grid(row=1,column=2)
-    Radiobutton(p,variable=izbor,text='Limuzina',value=2).grid(row=1,column=2)
-    l=Label(p,text='Broj kotača:')
-    l.grid(row=2,column=0)
-    e=Entry(p, width=20)
-    e.grid(row=2,column=1)
-    b=Button(p,text='PRETRAZI',command=lambda:trazi_auto(e,izbor))
-    b.grid(row=3,column=0)
-def test_Pickup():
-    l = Label(p, text='Pretraži Pickup aute')
-    l.grid(row=0, column=0, columnspan=3)
-
-    l = Label(p, text='Broj kotača:')
-    l.grid(row=1, column=0)
-    e = Entry(p, width=20)
-    e.grid(row=1, column=1)
-
-    b = Button(p, text='PRETRAŽI', command=lambda: trazi_auto(e, None, 'Pickup'))
-    b.grid(row=2, column=0, columnspan=2)
-
-def test_SUV():
-    l = Label(p, text='Pretraži SUV aute')
-    l.grid(row=0, column=0, columnspan=3)
-
-    l = Label(p, text='Broj kotača:')
-    l.grid(row=1, column=0)
-    e = Entry(p, width=20)
-    e.grid(row=1, column=1)
-
-    b = Button(p, text='PRETRAŽI', command=lambda: trazi_auto(e, None, 'SUV'))
-    b.grid(row=2, column=0, columnspan=2)
-
-def test_Limuzina():
-    l = Label(p, text='Pretraži Limuzine')
-    l.grid(row=0, column=0, columnspan=3)
-
-    l = Label(p, text='Broj kotača:')
-    l.grid(row=1, column=0)
-    e = Entry(p, width=20)
-    e.grid(row=1, column=1)
-
-    b = Button(p, text='PRETRAŽI', command=lambda: trazi_auto(e, None, 'Limuzina'))
-    b.grid(row=2, column=0, columnspan=2)
-
-
-
-
-def trazi_bicikl(e,izbor):
-    L_Cestovni=[
-        Cestovni('gradska vožnja','ljudska energija','žuta',3),
-        Cestovni('seoska vožnja','ljudska energija','crvena',5),
-        Cestovni('gradska vožnja','ljudska energija','plava',6)]
-    broj_vrata=int(e.get())
-    
-    L_BMX=[
-        BMX('terenska','ljudska energija', '40 km/h', 'natjecateljski'),
-        BMX('rekreacijska','ljudska energija', '25 km/h', 'freestyle'),
-        BMX('terenska','ljudska energija', '35 km/h', 'freestyle')]
-    broj_kotača=int(e.get())
-    
-    L_Dječji=[
-        Dječji('obrazovna','električni', 4, '20 cm'),
-        Dječji('rekreacijska','ljudska energija', 6, '30 cm'),
-        Dječji('natjecateljska','ljudska energija', 2, '45 cm')]
-     broj_kotača=int(e.get())
-   
-    novi=Toplevel(p)
-    Label(novi,text='Rezultati pretraživanja:').pack()
-    if izbor.get()==1:
-        for i in range(len(L_Pickup)):
-            if L_Pickup[i].k>=broj_kotača:
-                Label(novi,text=L_Pickup[i]).pack()
-    else:
-        for i in range(len(L_SUV)):
-            if L_SUV[i].k>=broj_kotača:
-                Label(novi,text=L_SUV[i]).pack()
-    else:
-        for i in range(len(L_Limuzina)):
-            if L_Limuzina[i].k>=broj_kotača:
-                Label(novi,text=L_Limuzina[i]).pack()
-    novi.mainloop()
-
-def test_Auto():
-    l=Label(p,text='Unesi podatke o autu')
-    l.grid(row=0,column=0)
-    l=Label(p,text='Vrsta auta:')
-    l.grid(row=1,column=0)
-    izbor=IntVar()
-    Radiobutton(p,variable=izbor,text='Pickup',value=1).grid(row=1,column=1)
-    Radiobutton(p,variable=izbor,text='SUV',value=2).grid(row=1,column=2)
-    Radiobutton(p,variable=izbor,text='Limuzina',value=2).grid(row=1,column=2)
-    l=Label(p,text='Broj kotača:')
-    l.grid(row=2,column=0)
-    e=Entry(p, width=20)
-    e.grid(row=2,column=1)
-    b=Button(p,text='PRETRAZI',command=lambda:trazi_auto(e,izbor))
-    b.grid(row=3,column=0)
-def test_Pickup():
-    l = Label(p, text='Pretraži Pickup aute')
-    l.grid(row=0, column=0, columnspan=3)
-
-    l = Label(p, text='Broj kotača:')
-    l.grid(row=1, column=0)
-    e = Entry(p, width=20)
-    e.grid(row=1, column=1)
-
-    b = Button(p, text='PRETRAŽI', command=lambda: trazi_auto(e, None, 'Pickup'))
-    b.grid(row=2, column=0, columnspan=2)
-
-def test_SUV():
-    l = Label(p, text='Pretraži SUV aute')
-    l.grid(row=0, column=0, columnspan=3)
-
-    l = Label(p, text='Broj kotača:')
-    l.grid(row=1, column=0)
-    e = Entry(p, width=20)
-    e.grid(row=1, column=1)
-
-    b = Button(p, text='PRETRAŽI', command=lambda: trazi_auto(e, None, 'SUV'))
-    b.grid(row=2, column=0, columnspan=2)
-
-def test_Limuzina():
-    l = Label(p, text='Pretraži Limuzine')
-    l.grid(row=0, column=0, columnspan=3)
-
-    l = Label(p, text='Broj kotača:')
-    l.grid(row=1, column=0)
-    e = Entry(p, width=20)
-    e.grid(row=1, column=1)
-
-    b = Button(p, text='PRETRAŽI', command=lambda: trazi_auto(e, None, 'Limuzina'))
-    b.grid(row=2, column=0, columnspan=2)
-
 
 def trazi_busevi(e,izbor):
-    L_
+    L_gradski=[
+        Gradski('prijevoz ljudi iz sela prema gradu',50,12,15),
+        Gradski('prijevoz po gradu',55,35,20)]
+    L_turist=[
+        Turistički('prijevoz između gradova',70,'zatvoreni','ima'),
+        Turistički('prijevoz po gradu',30,'otvoreni','nema'),
+        Turistički('prijevoz po gradu',60,'otvoreni','ima')]
+    kapacitet=int(e.get())
+
+    novi=Toplevel(p)
+    Label(novi,text='Rezultati pretraživanja:').pack()
+    if izbor.get()==1:
+        for i in range(len(L_gradski)):
+            if L_gradski[i].k>=kapacitet:
+                Label(novi,text=L_razgl[i]).pack()
+    else:
+        for i in range(len(L_turist)):
+            if L_turist[i].k>=kapacitet:
+                Label(novi,text=L_izl[i]).pack()
+    novi.mainloop()
+
+def test_busevi():
+    l=Label(p,text='Unesi podatke o busu')
+    l.grid(row=0,column=0)
+    l=Label(p,text='Vrsta busa:')
+    l.grid(row=1,column=0)
+    izbor=IntVar()
+    Radiobutton(p,variable=izbor,text='Gradski',value=1).grid(row=1,column=1)
+    Radiobutton(p,variable=izbor,text='Turistički',value=2).grid(row=1,column=2)
+    l=Label(p,text='Broj osoba:')
+    l.grid(row=2,column=0)
+    e=Entry(p, width=20)
+    e.grid(row=2,column=1)
+    b=Button(p,text='PRETRAZI',command=lambda:trazi_busevi(e,izbor))
+    b.grid(row=3,column=0)
+
 
 if __name__=='__main__':
     p=Tk()
