@@ -15,7 +15,7 @@ class Šleper(Kamion):
         self.r=vrsta_robe
         self.p=prikolica
     def __repr__(self):
-        return f'Šleper dužina: {self.d} namjena: {self.n} vrsta_robe:{self.r} prikolica:{self.p}'
+        return f'Dužina šlepera: {self.d}, njegova namjena: {self.n}, vrsta robe koju prevozi:{self.r}, kakvu prikolicu ima:{self.p}'
     def __str__(self):
         return self.__repr__()
 
@@ -27,6 +27,6 @@ class Autotransporter(Kamion):
         self.k=broj_katova
         self.plat=platforma
     def __repr__(self):
-        return f'Autotransporter dužina: {self.d} namjena: {self.n} broj_katova:{self.k} platforma:{self.plat}'
+        return f'Dužina autotransportera: {self.d}, njegova namjena: {self.n}, koliko katova ima:{self.k}, kakva mu je platforma:{self.plat}'
     def __str__(self):
         return self.__repr__()
