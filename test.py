@@ -50,7 +50,7 @@ if __name__=='__main__':
     p.geometry('600x300+100+100')
     menibar=Menu(p)
     podmeni=Menu(menibar)
-    podmeni.add_command(label='Aktivnosti', command=test_aktivnosti)
+    podmeni.add_command(label='Busevi', command=test_busevi)
     podmeni.add_command(label='Putovanja',command=test_putovanja)
     podmeni.add_command(label='Smještaj',underline= 1, command=test_smjestaj)
     podmeni.add_command(label="Izlaz", underline= 1, command= exit, accelerator= "Ctrl+Q")
