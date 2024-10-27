@@ -181,6 +181,10 @@ def test_Limuzina():
     b = Button(p, text='PRETRAŽI', command=lambda: trazi_auto(e, None, 'Limuzina'))
     b.grid(row=2, column=0, columnspan=2)
 
+
+def trazi_busevi(e,izbor):
+    L_
+
 if __name__=='__main__':
     p=Tk()
     p.geometry('600x300+100+100')
