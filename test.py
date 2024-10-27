@@ -132,16 +132,22 @@ def trazi_traktori(e,izbor):
         Vinogradarski('1599 kg','rad u vinogradima','5000 eur','50 L'),
         Vinogradarski('600 kg','rad u vinogradima','35000 eur','100 L'),
         Vinogradarski('500 kg','rad u vinogradima','9000 eur','70 L')]
+    težina=e.get().strip()
 
+    if not težina:
+        showerror("Greška", "Unesite težinu!")
+        return
+
+    
     novi=Toplevel(p)
     Label(novi,text='Rezultati pretraživanja:').pack()
     if izbor.get()==1:
         for i in range(len(L_poljoprivredni)):
-            if L_poljoprivredni[i].b==brzina:
+            if L_poljoprivredni[i].t==težina:
                 Label(novi,text=L_poljoprivredni[i]).pack()
     else:
         for i in range(len(L_vinogradarski)):
-            if L_vinogradarski[i].b==brzina:
+            if L_vinogradarski[i].t==težina:
                 Label(novi,text=L_vinogradarski[i]).pack()
     novi.mainloop()
 
