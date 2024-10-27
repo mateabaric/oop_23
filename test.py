@@ -166,17 +166,20 @@ def test_traktori():
     b=Button(p,text='PRETRAZI',command=lambda:trazi_traktori(e,izbor))
     b.grid(row=3,column=0)
 
-if __name__=='__main__':
-    p=Tk()
+if __name__ == '__main__':
+    p = Tk()
     p.geometry('600x300+100+100')
-    menibar=Menu(p)
-    podmeni=Menu(menibar)
+
+
+    menibar = Menu(p)
+    podmeni = Menu(menibar)
     podmeni.add_command(label='Busevi', command=test_busevi)
-    podmeni.add_command(label='Kamioni',command=test_kamioni)
-    podmeni.add_command(label='Motocikli',command=test_motocikli)
-    podmeni.add_command(label='Traktori',command=test_traktori)
-    podmeni.add_command(label="Izlaz", underline= 1, command= exit, accelerator= "Ctrl+Q")
+    podmeni.add_command(label='Kamioni', command=test_kamioni)
+    podmeni.add_command(label='Motocikli', command=test_motocikli)
+    podmeni.add_command(label='Traktori', command=test_traktori)
+    podmeni.add_command(label="Izlaz", underline=1, command=p.quit, accelerator="Ctrl+Q")
     menibar.add_cascade(label='Izbornik', menu=podmeni)
     p.config(menu=menibar)
     p.mainloop()
+
 
