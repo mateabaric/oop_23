@@ -178,6 +178,5 @@ if __name__=='__main__':
     podmeni.add_command(label="Izlaz", underline= 1, command= exit, accelerator= "Ctrl+Q")
     menibar.add_cascade(label='Izbornik', menu=podmeni)
     p.config(menu=menibar)
-    test_traktori()
     p.mainloop()
 
