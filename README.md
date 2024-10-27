@@ -1,2 +1,2 @@
-# oop_23
-primjer školskog OOP projekta
+# projektvozila
+Matea Barić i Sara Kovač
