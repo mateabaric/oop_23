@@ -15,7 +15,7 @@ class Poljoprivredni(Traktor):
         self.m=model
         self.s=snaga
     def __repr__(self):
-        return f'Poljoprivredni traktor težina: {self.t} namjena: {self.n} model:{self.m} snaga:{self.s}'
+        return f'Težina poljoprivrednog traktora : {self.t}, njegova namjena: {self.n}, model traktora :{self.m}, snaga:{self.s}'
     def __str__(self):
         return self.__repr__()
 
@@ -27,7 +27,7 @@ class Vinogradarski(Traktor):
         self.c=cijena
         self.spr=spremnik
     def __repr__(self):
-        return f'Vinogradarski traktor težina: {self.t} namjena: {self.n} cijena:{self.c} spremnik:{self.spr}'
+        return f'Težina vinogradarskog traktora : {self.t}, njegova namjena: {self.n}, njegova cijena:{self.c} spremnik:{self.spr}'
     def __str__(self):
         return self.__repr__()
 
