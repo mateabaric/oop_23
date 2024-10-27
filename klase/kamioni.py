@@ -30,15 +30,3 @@ class Autotransporter(Kamion):
         return f'Autotransporter dužina: {self.d} namjena: {self.n} broj_katova:{self.k} platforma:{self.plat}'
     def __str__(self):
         return self.__repr__()
-
-
-class Cisterna(Kamion):
-    def __init__(self, dužina, namjena, tekućina, kapacitet):
- 
-        super().__init__(dužina, namjena)
-        self.tek=tekućina
-        self.kap=kapacitet
-    def __repr__(self):
-        return f'Cisterna dužina: {self.d} namjena: {self.n} tekućina:{self.tek} kapacitet:{self.kap}'
-    def __str__(self):
-        return self.__repr__()
