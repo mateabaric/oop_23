@@ -1,4 +1,4 @@
-
+from tkinter.messagebox import showerror
 from klase.busevi import *
 from klase.kamioni import *
 from klase.motocikli import *
@@ -179,7 +179,4 @@ if __name__=='__main__':
     menibar.add_cascade(label='Izbornik', menu=podmeni)
     p.config(menu=menibar)
     test_busevi()
-    test_kamioni()
-    test_motocikli()
-    test_traktori()
     p.mainloop()
