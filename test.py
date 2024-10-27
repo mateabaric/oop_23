@@ -51,7 +51,7 @@ def trazi_kamioni(e,izbor):
     L_autotrans=[
         Autotransporter(13.5,'prijevoz rabljenih vozila',1,'otvorena'),
         Autotransporter(16,'prijevoz luksuznih vozila',2,'zatvorena'),
-        Autotransporter(10,'prijevoz motocikala',2,'s rampom'),]
+        Autotransporter(10,'prijevoz motocikala',2,'s rampom')]
     dužina=int(e.get())
 
     novi=Toplevel(p)
@@ -61,24 +61,24 @@ def trazi_kamioni(e,izbor):
             if L_šlep[i].d>=dužina:
                 Label(novi,text=L_šlep[i]).pack()
     else:
-        for i in range(len(L_turist)):
-            if L_turist[i].k>=kapacitet:
+        for i in range(len(L_autotrans)):
+            if L_autotrans[i].d>=dužina:
                 Label(novi,text=L_izl[i]).pack()
     novi.mainloop()
 
-def test_busevi():
-    l=Label(p,text='Unesi podatke o busu')
+def test_kamioni():
+    l=Label(p,text='Unesi podatke o kamionu')
     l.grid(row=0,column=0)
-    l=Label(p,text='Vrsta busa:')
+    l=Label(p,text='Vrsta kamiona:')
     l.grid(row=1,column=0)
     izbor=IntVar()
-    Radiobutton(p,variable=izbor,text='Gradski',value=1).grid(row=1,column=1)
-    Radiobutton(p,variable=izbor,text='Turistički',value=2).grid(row=1,column=2)
-    l=Label(p,text='Broj osoba:')
+    Radiobutton(p,variable=izbor,text='Šleper',value=1).grid(row=1,column=1)
+    Radiobutton(p,variable=izbor,text='Autotransporter',value=2).grid(row=1,column=2)
+    l=Label(p,text='Dužina kamiona:')
     l.grid(row=2,column=0)
     e=Entry(p, width=20)
     e.grid(row=2,column=1)
-    b=Button(p,text='PRETRAZI',command=lambda:trazi_busevi(e,izbor))
+    b=Button(p,text='PRETRAZI',command=lambda:trazi_kamioni(e,izbor))
     b.grid(row=3,column=0)
 
 
@@ -88,7 +88,7 @@ if __name__=='__main__':
     menibar=Menu(p)
     podmeni=Menu(menibar)
     podmeni.add_command(label='Busevi', command=test_busevi)
-    podmeni.add_command(label='Putovanja',command=test_putovanja)
+    podmeni.add_command(label='Kamioni',command=test_kamioni)
     podmeni.add_command(label='Smještaj',underline= 1, command=test_smjestaj)
     podmeni.add_command(label="Izlaz", underline= 1, command= exit, accelerator= "Ctrl+Q")
     menibar.add_cascade(label='Izbornik', menu=podmeni)
