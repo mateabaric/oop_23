@@ -81,6 +81,43 @@ def test_kamioni():
     b=Button(p,text='PRETRAZI',command=lambda:trazi_kamioni(e,izbor))
     b.grid(row=3,column=0)
 
+def trazi_motocikli(e,izbor):
+    L_sport=[
+        Sportski('200 km/h','15 000 eura','147 kW','Suzuki'),
+        Sportski('240 km/h','22 000 eura','147 kW','Yamaha'),
+        Sportski('300 km/h','30 000 eura','168 kW','Kawasaki')]
+    L_cruiser=[
+        Cruiser('160 km/h','17 000 eura','65 cm','1984. godina'),
+        Cruiser('140 km/h','9 500 eura','69 cm','2005. godina'),
+        Cruiser('190 km/h','14 000 eura','64 cm','1920. godina')]
+    brzina=str(e.get())
+
+    novi=Toplevel(p)
+    Label(novi,text='Rezultati pretraživanja:').pack()
+    if izbor.get()==1:
+        for i in range(len(L_sport)):
+            if L_sport[i].b==brzina:
+                Label(novi,text=L_sport[i]).pack()
+    else:
+        for i in range(len(L_cruiser)):
+            if L_cruiser[i].b==brzina:
+                Label(novi,text=L_cruiser[i]).pack()
+    novi.mainloop()
+
+def test_motocikli():
+    l=Label(p,text='Unesi podatke o motociklu')
+    l.grid(row=0,column=0)
+    l=Label(p,text='Vrsta motocikla:')
+    l.grid(row=1,column=0)
+    izbor=IntVar()
+    Radiobutton(p,variable=izbor,text='Sportski',value=1).grid(row=1,column=1)
+    Radiobutton(p,variable=izbor,text='Cruiser',value=2).grid(row=1,column=2)
+    l=Label(p,text='Brzina:')
+    l.grid(row=2,column=0)
+    e=Entry(p, width=20)
+    e.grid(row=2,column=1)
+    b=Button(p,text='PRETRAZI',command=lambda:trazi_motocikli(e,izbor))
+    b.grid(row=3,column=0)
 
 if __name__=='__main__':
     p=Tk()
@@ -89,7 +126,7 @@ if __name__=='__main__':
     podmeni=Menu(menibar)
     podmeni.add_command(label='Busevi', command=test_busevi)
     podmeni.add_command(label='Kamioni',command=test_kamioni)
-    podmeni.add_command(label='Smještaj',underline= 1, command=test_smjestaj)
+    podmeni.add_command(label='Motocikli',command=test_motocikli)
     podmeni.add_command(label="Izlaz", underline= 1, command= exit, accelerator= "Ctrl+Q")
     menibar.add_cascade(label='Izbornik', menu=podmeni)
     p.config(menu=menibar)
