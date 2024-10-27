@@ -31,14 +31,3 @@ class Vinogradarski(Traktor):
     def __str__(self):
         return self.__repr__()
 
-
-class Vučni(Traktor):
-    def __init__(self, težina, namjena, tip, brzina):
- 
-        super().__init__(težina, namjena)
-        self.tip=tip
-        self.brz=brzina
-    def __repr__(self):
-        return f'Vučni traktor težina: {self.t} namjena: {self.n} tip:{self.tip} brzina:{self.brz}'
-    def __str__(self):
-        return self.__repr__()
