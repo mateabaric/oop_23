@@ -15,7 +15,7 @@ class Sportski(Motocikl):
         self.s=snaga_motora
         self.m=marka
     def __repr__(self):
-        return f'Sportski motocikl brzina: {self.b} cijena: {self.c} snaga_motora:{self.s} marka:{self.m}'
+        return f'Brzina sportskog motocikla: {self.b}, njegova cijena: {self.c}, snaga njegovog motora:{self.s}, marka:{self.m}'
     def __str__(self):
         return self.__repr__()
 
@@ -27,7 +27,7 @@ class Cruiser(Motocikl):
         self.v=visina
         self.g=godina_proizvodnje
     def __repr__(self):
-        return f'Cruiser motocikl brzina: {self.b} cijena: {self.c} visina:{self.v} godina_proizvodnje:{self.g}'
+        return f'Brzina cruiser motocikla: {self.b}, njegova cijena: {self.c}, njegova visina:{self.v}, godina njegove proizvodnje:{self.g}'
     def __str__(self):
         return self.__repr__()
 
